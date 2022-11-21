@@ -1,7 +1,9 @@
+---
 layout: post
 title: "Hello, World!"
 date: 2022-11-12 22:40:00
 categories: blog
+---
 
 Hi there, this is just a quick test post for geefr.github.io.
 
