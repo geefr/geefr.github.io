@@ -1,0 +1,50 @@
+---
+---
+<!doctype html>
+<html lang="en">
+{% include head.html %}
+
+<body>
+  <div class="nav nav-homepage">
+    <div class="wrap">
+      {% for page in site.pages %} {% if page.title and page.header and page.partial != 'true' %}
+      <a class="page-link" href="{{ page.url | relative_url }}">{{ page.title }}</a> {% endif %} {% endfor %}
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="wrap">
+      <div id="page-blog">
+        <h2 class="blog-title">Recent Posts</h2>
+        <div class="blog-read-more">
+          <a href="{{ '/blog/' | relative_url }}">See all posts...</a>
+        </div>
+        <div class="posts">
+          {% for post in site.posts limit:4 %}
+          {% if post.hidden != true %}
+          <div class="post">
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              <h1 class="font-main">{{ post.title }}</h1>
+            </a>
+            {% if post.subtitle %}
+            <h2>{{ post.subtitle }}</h2>
+            <div class="meta">
+              <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+            </div>
+            {% endif %}
+            <div>
+              {% if post.excerpt %} {{ post.excerpt }} {% else %} {{ post.content | truncatewords: 75 }} {% endif %}
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+        <h3>
+          <a href="{{ '/blog/' | relative_url }}">See more posts...</a>
+        </h3>
+      </div>
+    </div>
+  </div>
+  {% include footer.html %}
+
+</html>
+
