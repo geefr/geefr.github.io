@@ -14,16 +14,13 @@
   <div class="page-content">
     <div class="wrap">
       <div id="page-blog">
-        <h2 class="blog-title">Recent Posts</h2>
-        <div class="blog-read-more">
-          <a href="{{ '/blog/' | relative_url }}">See all posts...</a>
-        </div>
+        <h1>Geefr's Tech Posts</h1>
         <div class="posts">
-          {% for post in site.posts limit:4 %}
+          {% for post in site.posts %}
           {% if post.hidden != true %}
           <div class="post">
             <a class="post-link" href="{{ post.url | relative_url }}">
-              <h1 class="font-main">{{ post.title }}</h1>
+              <h3 class="font-main">{{ post.title }}</h3>
             </a>
             {% if post.subtitle %}
             <h2>{{ post.subtitle }}</h2>
@@ -35,6 +32,7 @@
               {% if post.excerpt %} {{ post.excerpt }} {% else %} {{ post.content | truncatewords: 75 }} {% endif %}
             </div>
           </div>
+	  <hr />
           {% endif %}
           {% endfor %}
         </div>
