@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "On an OpenXR Quest Quest"
+title: "Porting VSGVR to the Oculus Quest"
 date: 2022-11-27 13:00
 categories: blog
 ---
